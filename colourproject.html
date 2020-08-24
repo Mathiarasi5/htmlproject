@@ -1,0 +1,46 @@
+<html>
+<head>
+<script>
+const colors = [ 'violet', 'indigo', 'blue', 'green',  'yellow' ,'orange',  'red'];
+
+function randColor() {
+    var random = Math.floor(Math.random() * colors.length);
+    const body = document.body;
+    body.style.backgroundColor = colors[random];
+}
+</script>
+<style>
+ body {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.change {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 150px;
+    color: black;
+    margin: 0 auto;
+    cursor: pointer;
+    font-size: 30px;
+    font-family:"sans-serif"
+    border: none;
+    box-shadow: 0 15px 15px black;
+    outline: none;
+}
+.change:active {
+    box-shadow: none;
+}
+</style>
+
+
+    </head>
+    <body>
+
+    <button class="change" onClick="randColor()"><font face="Lucida Calligraphy" size=4>hashtag click me for rainbow colours </font></button>
+   
+    </body>
+</html>
