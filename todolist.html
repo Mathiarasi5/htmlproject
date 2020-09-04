@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>HTML dynamic table </title>
+    <link rel="stylesheet" 
+   href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+
+   <style>
+
+.input-icons i { 
+
+position: absolute; 
+
+} 
+
+table.roundedCorners { 
+
+  border: 1px solid black;
+  border-radius: 13px; 
+  border-spacing: 0;
+  }
+table.roundedCorners td, 
+table.roundedCorners th { 
+  border-bottom: 1px solid black;
+  padding: 10px; 
+  }
+table.roundedCorners tr:last-child > td {
+  border-bottom: none;
+}
+
+
+
+.input-icons { 
+
+  width: 100; 
+
+     margin-bottom: 10px; 
+
+} 
+
+.img{
+width:100px;
+height:100px;
+}
+
+.icon { 
+
+padding: 10px; 
+
+min-width: 40px; 
+
+} 
+div.mybutton input{
+background:"https://www.freepngimg.com/thumb/submit_button/25497-9-submit-button-photos.png" :
+cursor:pointer;
+width:200px;
+height:100px;
+border:none;
+}
+
+
+.input-field { 
+
+width: 10px; 
+
+padding: 10px; 
+
+text-align: center; 
+
+} 
+
+
+   </style>
+    <script >
+
+function addRow() {
+          
+          var myName = document.getElementById("name");
+          var roll = document.getElementById("roll");
+          var mails = document.getElementById("mail");
+          var gits= document.getElementById("git");
+          var table = document.getElementById("myTableData");
+       
+          var rowCount = table.rows.length;
+          var row = table.insertRow(rowCount);
+       
+          
+          row.insertCell(0).innerHTML= myName.value;
+          row.insertCell(1).innerHTML= roll.value;
+          row.insertCell(2).innerHTML= mails.value;
+          row.insertCell(3).innerHTML= gits.value;
+       
+             row.insertCell(4).innerHTML= '<input type="button" value = "Delete" onClick="Javacsript:deleteRow(this)">';
+      
+      }
+       
+      function deleteRow(obj) {
+            
+          var index = obj.parentNode.parentNode.rowIndex;
+          var table = document.getElementById("myTableData");
+          table.deleteRow(index);
+          
+      }
+      
+      function load() {
+          
+          console.log("Page load finished");
+       
+      }
+      function reSet(){
+             document.getElementById("myform").reset();
+                           }
+
+
+    </script>
+
+
+</head>
+<body leftmargin=200  text=black background=https://www.pixelstalk.net/wp-content/uploads/2016/04/Grey-Desktop-Wallpapers-HD.jpg topmargin=90 text=black size=6   onload="load()">
+    <font face="Verdana" color=pink> 
+        <div class="boxed"><font face="Algerian" size=6 color=black><h3 align=center> KEC CSE COMMUNITY FOLKS</div></h3></font>
+      <center><h1> </h1></center>
+       
+<form id="myform">
+             
+
+    <p><label for="username">
+        <font face=cursive size=5 color=white><i class="fa fa-user icon"></i> </font><b><font face="Times New Roman" size=4 color=black> User Name:</font></b></label> 
+     <Input type = text name="user_name" id="name"  placeholder="Enter your name" maxlength = 15> </p>
+
+        <p><label for="rollno">  <font face=cursive size=6 color=white> <i class="fa fa-address-book-o icon"></i></font>
+        <b><font face="Times New Roman" size=4 color=black>Register number:</font></b></label> 
+        <Input type = text  name="register_num"  id="roll" placeholder="Eg: 19CSR105" maxlength = 15> </p>
+
+
+        
+        <label  for="mail"><b><font face=arial size=6 color=white><i class="fa fa-envelope-square  icon"></i></font><font face="Times New Roman" size=4 color=black> OutlookMail ID:</font> </b>    </label> 
+        <input type="text" id="mail"placeholder="Enter your mail id"><br/><br/>
+
+        <label for="git"><b><font color=white size= 6> <i class="fa fa-github icon"></i></font><font face="Times New Roman" size=4 color=black>Github user ID :</font></b></label>
+
+       <input type="text" id="git" placeholder="in URL"><br/><br/>
+</form>
+                             <input type="button" value="reset" onclick="reSet()"><br/><br/>
+       <button type="submit" id="add" onclick="Javascript:addRow()">
+                            <img src="https://www.freepngimg.com/thumb/submit_button/25497-9-submit-button-photos.png" name="add" width="70" height="30" alt="add"/> 
+                   </button><br/><br/>
+
+  
+    
+                    
+
+             
+</div><br/><br/><br/>
+<div tabel id=mydata>
+<font color=black>
+<table id="myTableData"  class="roundedCorners" align=center valign="top">
+    <tr>
+       
+        <td bgcolor=black><b> <font face=cursive size=5 color=white align=center><i class="fa fa-user icon"></b></td>
+        <td bgcolor=black><b><font face=cursive size=6 color=white align=center> <i class="fa fa-address-book-o icon"></i></font></b></td>
+        <td bgcolor=black><b><font face=arial size=6 color=white align=center><i class="fa fa-envelope-square  icon"></i></font></b></td>
+        <td bgcolor=black><b><font color=white size= 6 align=center> <i class="fa fa-github icon"></i></font></b></td>
+        <td bgcolor=black>&nbsp<font color=white size= 6 align=center> <i class="fa fa-trash icon"></i></font></td>
+    </tr></font>
+</table>
+&nbsp;
+ 
+</div>
+
+</body>
+</html>
