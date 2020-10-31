@@ -1,0 +1,76 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+<style> body {
+
+       background-color:purple;
+       align-items:justify;
+      justify-content:justify;
+.justufy-image{
+text-align:justify;
+}
+
+}</style>
+<script>
+
+ var images = [
+      "C:\Users\siva1\Pictures\Saved Pictures\india-map.jpg",
+"C:\Users\siva1\Pictures\Saved Pictures\5f1930b5bb82d83ae84c22dfa2a3787e.jpg",
+"C:\Users\siva1\Pictures\Feedback\{D2EA6A12-ABF4-4AA2-9DF1-97A2A1A0F897}\political-map-of-Asia.gif",
+];
+
+let count = 0;
+
+
+function next(){
+    
+    let mySlider = document.getElementById("mySlider");
+
+
+    count++;
+    
+    if (count >= images.length){
+        
+        count = 0;
+    }
+    
+    
+    mySlider.src = images[count];
+};
+
+
+
+function prev(){
+  let mySlider = document.getElementById("mySlider");
+      count--;
+      
+      if(count < 0){
+          
+          count = images.length - 1;
+      }
+    
+    mySlider.src = images[count];
+};
+</script>
+    </head>
+    <body>
+    <p class="justify-image">
+    <h1 align="justify">Image slider!</h1>
+    
+    <div>
+    
+     <button class="prev" style=" width:200px; height:200px" onclick="prev();"><font size=200>-</font></button>
+    
+    <img id="mySlider" src= 'https://images.unsplash.com/photo-1588117305388-c2631a279f82?ixlib=rb-1.2.1&w=1000&q=80',
+ alt="sorry" width=2000 height=2000>
+  
+ 
+    <button  class="next" style=" width:200px; height:200px"
+    onclick="next();"><font size=200>+</font></button>
+    
+    </div>
+</p>
+    
+    </body>
+</html>
